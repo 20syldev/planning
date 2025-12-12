@@ -1,0 +1,65 @@
+/* - - - - - - - Responsive - - - - - - - */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #1d1d1f;
+        --bg-card: #2c2c2e;
+        --text: #f5f5f7;
+        --text-secondary: #98989d;
+        --border: #48484a;
+        --shadow: #0000004d;
+    }
+}
+
+/* Tablette */
+@media (min-width: 768px) {
+    body { padding: 1.5rem; }
+
+    .week { padding: 1.25rem; }
+    .day { padding: 1rem; }
+
+    .modal .content { padding: 2rem; }
+    .modal .title { font-size: 1.5rem; }
+}
+
+/* PC */
+@media (min-width: 1024px) {
+    body { padding: 2rem; }
+
+    .nav { display: block; }
+    .dot { display: none; }
+
+    .week {
+        border-radius: 20px;
+        padding: 1.5rem;
+    }
+    .week .content {
+        flex-direction: row;
+        gap: 1.25rem;
+    }
+    .day {
+        border-radius: 14px;
+        padding: 1.25rem;
+        flex: 1;
+    }
+
+    .event { padding: 1rem; }
+    .event .title { font-size: 1rem; }
+}
+
+/* Grand écran */
+@media (min-width: 1400px) {
+    .week .header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    .week .number { font-size: 1.25rem; }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .event .header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
