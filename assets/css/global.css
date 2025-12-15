@@ -302,9 +302,8 @@ body {
 }
 .badge.current {
     background: var(--current);
-    padding: 0.15rem 0.4rem;
-    border-radius: 4px;
-    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
 }
 
 .card .events {
@@ -360,7 +359,7 @@ body {
     align-items: center;
     font-size: 0.95rem;
     font-weight: 600;
-    gap: 0.4rem;
+    gap: 1rem;
 }
 
 .event .time {
@@ -477,7 +476,7 @@ body {
     padding-right: 2rem;
     font-size: 1.35rem;
     font-weight: 700;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .modal .time {
