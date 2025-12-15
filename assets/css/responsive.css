@@ -18,7 +18,10 @@
     .week { padding: 1.25rem; }
     .day { padding: 1rem; }
 
-    .modal .content { padding: 2rem; }
+    .modal .content {
+        max-width: 600px;
+        padding: 2rem;
+    }
     .modal .title { font-size: 1.5rem; }
 }
 
