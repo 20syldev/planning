@@ -1,4 +1,8 @@
-import { formatDate, formatTime, formatDayName, formatDayDate, getWeekNumber, isToday, isCurrentEvent, isMobile, parseUTC } from './utility.js';
+import {
+    formatDate, formatTime, formatDayName, formatDayDate,
+    getWeekNumber, isToday, parseUTC,
+    isCurrentEvent, isMobile,
+} from './utility.js';
 
 // - - - - - - - Éléments DOM - - - - - - - //
 
