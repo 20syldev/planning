@@ -1,4 +1,4 @@
-import { formatDate, formatTime, formatDayName, formatDayDate, getWeekNumber, isToday, isCurrentEvent, isMobile } from './utility.js';
+import { formatDate, formatTime, formatDayName, formatDayDate, getWeekNumber, isToday, isCurrentEvent, isMobile, parseUTC } from './utility.js';
 
 // - - - - - - - Éléments DOM - - - - - - - //
 
@@ -24,7 +24,7 @@ export function groupByDay(events) {
     const days = {};
 
     events.filter(e => e.subject?.trim()).forEach(event => {
-        const date = new Date(event.start);
+        const date = parseUTC(event.start);
         const dayKey = date.toDateString();
 
         if (!days[dayKey]) days[dayKey] = { date, events: [] };
@@ -40,7 +40,7 @@ export function groupByWeek(events) {
     const weeks = {};
 
     events.filter(e => e.subject?.trim()).forEach(event => {
-        const date = new Date(event.start);
+        const date = parseUTC(event.start);
         const weekNum = getWeekNumber(date);
         const year = date.getFullYear();
 
@@ -62,15 +62,15 @@ export function groupByWeek(events) {
 export function addLunchBreak(events) {
     if (events.length < 2) return events;
 
-    const sorted = [...events].sort((a, b) => new Date(a.start) - new Date(b.start));
+    const sorted = [...events].sort((a, b) => parseUTC(a.start) - parseUTC(b.start));
     const result = [];
 
     for (let i = 0; i < sorted.length; i++) {
         result.push(sorted[i]);
 
         if (i < sorted.length - 1) {
-            const currentEnd = new Date(sorted[i].end);
-            const nextStart = new Date(sorted[i + 1].start);
+            const currentEnd = parseUTC(sorted[i].end);
+            const nextStart = parseUTC(sorted[i + 1].start);
             const endHour = currentEnd.getHours();
             const startHour = nextStart.getHours();
             const gap = (nextStart - currentEnd) / 60000;
@@ -104,8 +104,8 @@ export function findCurrentOrNextDayIndex() {
 
 // Ouvre la modale de détail
 export function openModal(event) {
-    const start = new Date(event.start);
-    const end = new Date(event.end);
+    const start = parseUTC(event.start);
+    const end = parseUTC(event.end);
     const isCurrent = isCurrentEvent(event);
 
     modalBody.innerHTML = `
@@ -174,8 +174,8 @@ export function closeModal() {
 
 // Génère le HTML d'un événement
 export function renderEvent(event) {
-    const start = new Date(event.start);
-    const end = new Date(event.end);
+    const start = parseUTC(event.start);
+    const end = parseUTC(event.end);
     const isCurrent = isCurrentEvent(event);
     const eventData = encodeURIComponent(JSON.stringify(event));
 

@@ -31,6 +31,11 @@ export function getWeekNumber(date) {
 
 // - - - - - - - Fonctions utilitaires - - - - - - - //
 
+// Parse une date UTC de l'API (ajoute Z pour forcer UTC)
+export function parseUTC(dateString) {
+    return new Date(dateString + 'Z');
+}
+
 // Vérifie si c'est aujourd'hui
 export function isToday(date) {
     return date.toDateString() === new Date().toDateString();
@@ -39,7 +44,7 @@ export function isToday(date) {
 // Vérifie si un événement est en cours
 export function isCurrentEvent(event) {
     const now = new Date();
-    return now >= new Date(event.start) && now <= new Date(event.end);
+    return now >= parseUTC(event.start) && now <= parseUTC(event.end);
 }
 
 // Vérifie si on est sur mobile
