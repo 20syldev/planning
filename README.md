@@ -1,8 +1,8 @@
 <div align="center">
-  <a href="https://planning.sylvain.pro"><img src="assets/images/logo.png" alt="Logo" width="25%" height="auto"/></a>
+  <a href="https://planning.sylvain.sh"><img src="assets/images/logo.png" alt="Logo" width="25%" height="auto"/></a>
 
   # Planning
-  [![Version](https://custom-icon-badges.demolab.com/badge/Version%20:-v1.1.0-6479ee?logo=planning.sylvain.pro&labelColor=23272A)](https://github.com/20syldev/planning/releases/latest)
+  [![Version](https://custom-icon-badges.demolab.com/badge/Version%20:-v1.1.0-6479ee?logo=planning.sylvain.sh&labelColor=23272A)](https://github.com/20syldev/planning/releases/latest)
 </div>
 
 ---

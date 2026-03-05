@@ -324,7 +324,7 @@ export async function loadPlanning(specialite, currentView) {
         const config = await configResponse.json();
         const url = encodeURIComponent(config[specialite.toLowerCase()]);
 
-        const response = await fetch('https://api.sylvain.pro/v3/hyperplanning', {
+        const response = await fetch('https://api.sylvain.sh/v3/hyperplanning', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: `url=${url}&detail=full`

@@ -1,4 +1,4 @@
-name: Deploy planning.sylvain.pro
+name: Deploy planning.sylvain.sh
 
 on:
   push:
